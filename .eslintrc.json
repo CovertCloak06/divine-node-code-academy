@@ -6,8 +6,12 @@
   },
   "extends": [
     "eslint:recommended",
+    "plugin:import/recommended",
+    "plugin:sonarjs/recommended-legacy",
+    "plugin:security/recommended-legacy",
     "prettier"
   ],
+  "plugins": ["import", "sonarjs", "security"],
   "parserOptions": {
     "ecmaVersion": 2021,
     "sourceType": "module"
@@ -45,7 +49,19 @@
     "object-curly-spacing": ["error", "always"],
     "array-bracket-spacing": ["error", "never"],
     "max-len": ["warn", { "code": 100, "ignoreStrings": true, "ignoreTemplateLiterals": true, "ignoreComments": true }],
-    "no-multiple-empty-lines": ["error", { "max": 1 }]
+    "no-multiple-empty-lines": ["error", { "max": 1 }],
+    "import/order": ["error", {
+      "groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
+      "newlines-between": "never",
+      "alphabetize": { "order": "asc", "caseInsensitive": true }
+    }],
+    "import/no-unresolved": "off",
+    "import/namespace": "off",
+    "import/default": "off",
+    "import/no-named-as-default": "off",
+    "import/no-named-as-default-member": "off",
+    "security/detect-object-injection": "off",
+    "sonarjs/cognitive-complexity": ["warn", 15]
   },
   "ignorePatterns": [
     "node_modules/",
