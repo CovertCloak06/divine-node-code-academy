@@ -13,10 +13,10 @@
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
     "test:a11y": "playwright test tests/a11y",
-    "lint": "eslint src/ js/ --ext .js",
-    "lint:fix": "eslint src/ js/ --ext .js --fix",
-    "format": "prettier --write \"src/**/*.js\" \"js/**/*.js\" \"css/**/*.css\"",
-    "format:check": "prettier --check \"src/**/*.js\" \"js/**/*.js\" \"css/**/*.css\"",
+    "lint": "biome lint src/ js/",
+    "lint:fix": "biome check --write src/ js/ css/",
+    "format": "biome format --write src/ js/ css/",
+    "format:check": "biome format src/ js/ css/",
     "type-check": "tsc --noEmit",
     "analyze": "vite build --mode analyze",
     "lighthouse": "lhci autorun",
@@ -24,7 +24,10 @@
     "security-audit": "npm audit --production",
     "commit": "cz",
     "release": "semantic-release",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "generate": "plop",
+    "generate:component": "plop component",
+    "generate:lesson": "plop lesson"
   },
   "keywords": [
     "education",
@@ -37,6 +40,7 @@
   "license": "MIT",
   "devDependencies": {
     "@axe-core/playwright": "^4.11.0",
+    "@biomejs/biome": "^2.3.11",
     "@commitlint/cli": "^20.3.1",
     "@commitlint/config-conventional": "^20.3.1",
     "@lhci/cli": "^0.15.1",
@@ -46,17 +50,13 @@
     "@vitest/ui": "^1.0.0",
     "commitizen": "^4.3.1",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^8.55.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-import": "^2.32.0",
-    "eslint-plugin-security": "^3.0.1",
-    "eslint-plugin-sonarjs": "^3.0.5",
     "happy-dom": "^20.1.0",
     "husky": "^8.0.3",
+    "hygen": "^6.2.11",
     "jsdom": "^27.4.0",
     "license-checker": "^25.0.1",
     "lint-staged": "^15.2.0",
-    "prettier": "^3.1.1",
+    "plop": "^4.0.4",
     "rollup-plugin-visualizer": "^6.0.5",
     "semantic-release": "^24.2.9",
     "typescript": "^5.3.3",
@@ -70,12 +70,8 @@
     "ajv": "^8.12.0"
   },
   "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.css": [
-      "prettier --write"
+    "*.{js,css}": [
+      "biome check --write --no-errors-on-unmatched"
     ]
   },
   "config": {

@@ -2,6 +2,40 @@
 
 **CRITICAL: Read `/home/gh0st/dvn/ARCHITECTURE_STANDARDS.md` FIRST before making ANY changes.**
 
+## ⚠️ MANDATORY POLICY: BEST TOOLS FIRST - NO EXCEPTIONS ⚠️
+
+**THIS IS NON-NEGOTIABLE AND MUST BE FOLLOWED ON EVERY PROJECT:**
+
+1. **ALWAYS INSTALL THE BEST TOOLS FROM THE START**
+   - Research what the industry-leading, best-in-class tool is for each need
+   - Install that tool FIRST - do NOT install something mediocre planning to replace it later
+   - Example: Biome (not ESLint), pnpm (not npm), esbuild/swc (not webpack/babel)
+
+2. **NEVER WASTE TIME REPLACING TOOLS**
+   - If there's a better tool available, use it from day one
+   - Do NOT install Tool A knowing Tool B is superior
+   - User's time is precious - no do-overs, no upgrades, no replacements
+
+3. **RESEARCH BEFORE INSTALLING**
+   - Check ADDITIONAL_TOOLING_OPTIONS.md for best tools
+   - Google "[task] best tool 2026" before choosing
+   - Prioritize: speed, developer experience, modern standards
+   - Choose tools that are 10x-100x better, not 10% better
+
+4. **THIS APPLIES TO:**
+   - Linters/formatters (Biome > ESLint+Prettier)
+   - Package managers (pnpm > npm)
+   - Build tools (esbuild/swc > webpack/babel)
+   - Testing (Vitest > Jest)
+   - Any tooling decision
+
+5. **CONSEQUENCES OF VIOLATION:**
+   - User frustration and lost time
+   - Wasted effort setting up tools that will be replaced
+   - Loss of trust in AI assistant capabilities
+
+**REMEMBER: The user asked for THE BEST, not "good enough." Deliver excellence from the start.**
+
 ## Project Overview
 
 Divine Node Code Academy is an interactive web-based coding education platform for complete beginners. It teaches HTML, CSS, JavaScript, and development workflows through hands-on lessons with live code validation and visual feedback.
