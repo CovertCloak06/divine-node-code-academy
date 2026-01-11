@@ -9,7 +9,7 @@
 1. **ALWAYS INSTALL THE BEST TOOLS FROM THE START**
    - Research what the industry-leading, best-in-class tool is for each need
    - Install that tool FIRST - do NOT install something mediocre planning to replace it later
-   - Example: Biome (not ESLint), pnpm (not npm), esbuild/swc (not webpack/babel)
+   - Example: Biome (not ESLint), pre-commit (not Husky), Taskfile (not Make)
 
 2. **NEVER WASTE TIME REPLACING TOOLS**
    - If there's a better tool available, use it from day one
@@ -22,12 +22,15 @@
    - Prioritize: speed, developer experience, modern standards
    - Choose tools that are 10x-100x better, not 10% better
 
-4. **THIS APPLIES TO:**
-   - Linters/formatters (Biome > ESLint+Prettier)
-   - Package managers (pnpm > npm)
-   - Build tools (esbuild/swc > webpack/babel)
-   - Testing (Vitest > Jest)
-   - Any tooling decision
+4. **THIS APPLIES TO ALL CATEGORIES:**
+   - **Linters/formatters:** Biome > ESLint+Prettier
+   - **Git hooks:** pre-commit > Husky
+   - **Task runners:** Taskfile/Invoke > Make/npm scripts
+   - **Build tools:** esbuild/swc > webpack/babel
+   - **Testing:** Vitest > Jest
+   - **Python tools:** Poetry/uv > pip, pre-commit, cookiecutter, invoke
+   - **Deployment:** Vercel/Netlify > manual deployment
+   - **Any tooling decision**
 
 5. **CONSEQUENCES OF VIOLATION:**
    - User frustration and lost time
@@ -35,6 +38,41 @@
    - Loss of trust in AI assistant capabilities
 
 **REMEMBER: The user asked for THE BEST, not "good enough." Deliver excellence from the start.**
+
+## 🛠️ Current Best-in-Class Tooling Stack
+
+### JavaScript/Node.js
+- **Linter/Formatter:** Biome (100x faster than ESLint+Prettier combined)
+- **Build Tool:** Vite (esbuild-based, fastest)
+- **Testing:** Vitest + Playwright
+- **Code Generation:** Plop + Hygen
+- **Package Manager:** npm (could upgrade to pnpm for 3x speed)
+
+### Python
+- **Git Hooks:** pre-commit (language-agnostic, better than Husky)
+- **Task Automation:** Invoke (Python-based tasks)
+- **Scaffolding:** Cookiecutter (project templates)
+- **Requirements:** requirements.txt
+
+### Task Automation
+- **Taskfile** (Go-based, modern, better than Make)
+- **Invoke** (Python-based, more flexible than shell scripts)
+- **Makefile** (kept for compatibility)
+
+### Deployment
+- **Vercel:** Zero-config, automatic previews, edge network
+- **Netlify:** Jamstack platform, forms, functions
+- **Docker:** Production containerization
+
+### CI/CD
+- **GitHub Actions:** Workflow automation
+- **pre-commit.ci:** Automatic hook running
+- **Dependabot:** Dependency updates
+
+### Development
+- **Docker Compose:** Local containerization
+- **nginx:** Production web server
+- **Hot reload:** Vite dev server
 
 ## Project Overview
 
